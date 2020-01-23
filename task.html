@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+<body>
+  
+  <button id="joke-btn">Get Joke</button>
+
+<div id="joke-container"></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  $('#joke-btn').click(function() {
+    $.get('https://api.chucknorris.io/jokes/random', function(data) {
+      $('#joke-container').html('<div><div><img src="'+ data.icon_url +'" alt="joke-image" /></div><small>'+ data.created_at +'</small><p>'+ data.value +'</p></div>');
+    });
+  });
+</script>
+</body>
+</html>
